@@ -1,0 +1,5 @@
+---
+# defaults file for roles/filebeat_versions/
+beat_root: "/usr/share"
+filebeat_cmd: "{{ beat_root }}/filebeat/bin/filebeat"
+filebeat_user: "root"

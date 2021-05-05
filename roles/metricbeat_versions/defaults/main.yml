@@ -1,0 +1,5 @@
+---
+# defaults file for roles/metricbeat_versions
+beat_root: "/usr/share"
+metricbeat_cmd: "{{ beat_root }}/metricbeat/bin/metricbeat"
+metricbeat_user: "root"

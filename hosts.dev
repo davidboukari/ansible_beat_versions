@@ -1,0 +1,6 @@
+[all]
+filebeat-1
+logstash-1
+logstash-2
+elasticsearch-1
+elasticsearch-2
