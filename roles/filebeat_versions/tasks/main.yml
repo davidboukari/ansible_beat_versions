@@ -1,0 +1,15 @@
+---
+# tasks file for roles/filebeat_versions/
+- name: Check if filebeat is installed
+  stat:
+    path: "{{ beat_root }}/filebeat/bin/filebeat"
+  register: filebeat_exists
+
+- name: Get Filebeat version
+  command: "{{ filebeat_cmd }} version"
+  register: filebeat_version
+  when: filebeat_exists.stat.exists
+
+- debug:
+    var: filebeat_version.stdout.split(",")[0]
+

@@ -1,0 +1,7 @@
+---
+-
+  vars:
+  hosts: all
+  roles: 
+    - metricbeat_versions
+    - filebeat_versions

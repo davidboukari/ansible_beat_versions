@@ -1,0 +1,14 @@
+---
+# tasks file for roles/metricbeat_versions
+- name: Check metricbeat is installed
+  stat:
+    path: "{{ beat_root }}/metricbeat/bin/metricbeat"
+  register: metricbeat_exists
+
+- name: Get Metricbeat version
+  command: "{{ metricbeat_cmd }} version"
+  register: metricbeat_version
+  when: metricbeat_exists.stat.exists
+
+- debug:
+    var: metricbeat_version.stdout.split(",")[0]
